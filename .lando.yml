@@ -1,24 +1,28 @@
-name: hautakivi
+name: sitename
 recipe: wordpress
 proxy:
-  nginx: # Optional: if you exclude this, Lando will serve it as bedrock.lndo.site
-    - hautakivi.test
-  theme: # Optional: add this if you include the Sage specific config down below
-    - localhost:3000
+  # nginx: # Optional: if you exclude this, Lando will serve it as bedrock.lndo.site
+  #   - sitename.test
+  node: # webpack-dev-server url
+    - localhost:8080
 config:
-  php: '7.3'
+  php: "7.3"
   via: nginx
   webroot: web
   database: mariadb
   xdebug: true
 
-# Add the following if you plan to use Sage as a starter theme
+# More containers such as build processes or CI flows
 services:
-  theme:
+  node:
     type: node
     services:
       ports:
-        - 3000:3000
+        - 8080:8080
+
+# Example usage: run `lando npm run build` or `lando yarn run build`
 tooling:
+  npm:
+    service: node
   yarn:
-    service: theme
+    service: node
