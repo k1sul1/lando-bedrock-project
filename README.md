@@ -3,11 +3,11 @@
 ```
 lando start
 lando composer install
-cd web/app/themes/yourtheme
+cd web/wp-content/themes/yourtheme
 lando yarn && lando yarn build
 ```
 
-Original readme below.
+Original readme below. Note that /web/app folder has been replaced with the sane /web/wp-content folder.
 
 
 <p align="center">
