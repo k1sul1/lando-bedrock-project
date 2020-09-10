@@ -1,3 +1,15 @@
+# Bedrock w/ Lando
+
+```
+lando start
+lando composer install
+cd web/app/themes/yourtheme
+lando yarn && lando yarn build
+```
+
+Original readme below.
+
+
 <p align="center">
   <a href="https://roots.io/bedrock/">
     <img alt="Bedrock" src="https://cdn.roots.io/app/uploads/logo-bedrock.svg" height="100">
